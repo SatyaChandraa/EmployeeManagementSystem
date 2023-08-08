@@ -1,0 +1,100 @@
+
+<h1>Roles of Employees <span><button (click)="displayForm()">  ADD </button></span></h1>  
+
+<!-- <table>
+
+
+  <thead>
+
+    <th>Roles</th>
+    <th>Levels</th>
+  </thead>
+    <tr *ngFor="let r of roles">
+        <td>
+           {{r.role}}
+        </td>
+        <td>
+          {{r.level}}
+        </td>
+        <td>
+            <button (click)="delete(r)">Delete</button>
+        </td>
+        <td>
+            <button (click)="show(r.id)">Edit</button>
+        </td>
+        
+    </tr>
+</table> -->
+
+<div *ngIf="roles.length > 0">
+  <app-mat-table id="roles-app" [empData]="roles" (myevent)="delete($event)" (editEvent)="show($event.id)" (pageEvent)="pageEvent($event)"  [recordsCount]="recordsCount" (filterEvent)="filter($event)"></app-mat-table>
+</div>
+
+<br>
+<br>
+
+<div id="spinner" *ngIf="employeeListService.isLoading">
+  <mat-spinner diameter="50"  ></mat-spinner>
+  <span>Loading...</span>
+</div>
+
+<form #myform="ngForm"  *ngIf="showForm"  >
+  <table class="formtable">
+    <tr>
+
+      <td> ROLE NAME</td>
+      
+      <td>
+        <input type="text" name="role" required [(ngModel)]="role" #in = "ngModel" minlength="4">
+        <div *ngIf="myform.submitted && myform.controls['role'].invalid">
+          <div *ngIf="myform.controls['role'].errors?.['required']">
+            Field must not be empty.
+          </div>
+          <div *ngIf="myform.controls['role'].errors?.['minlength']">
+            Field must be at least 4 characters long
+          </div>
+        </div>
+      </td>
+
+      <!-- <td>
+
+        <select name="role" *ngFor="let r of roles" >
+
+          <option value="{{r.role}}"> {{r.role}} </option>
+        </select>
+
+      </td> -->
+
+    </tr>
+
+    <tr>
+      <td>
+        LEVELS
+      </td>
+      <td>
+        <select name="level" id=""  [(ngModel)]="selectedLevel" required  >
+
+          <option value="level 1" >Level 1</option>
+          <option value="level 2">Level 2</option>
+          <option value="level 3">Level 3</option>
+          
+          
+        </select>
+        <!-- <div *ngIf="myform.submitted && myform.controls['level'].invalid"> -->
+          <div *ngIf="myform.submitted && myform.controls['level'].errors?.['required']">
+              Option should be selected
+          </div>
+
+        <!-- </div> -->
+      </td>
+    </tr>
+</table>
+<button type="submit"  class="rbutton" (click)="addData(in.value)" *ngIf="addTrue">ADD</button>
+
+<button type="submit" *ngIf="updateTrue" class="rbutton" (click)="updateData(in.value)" >Update</button>
+<button  (click)="clear()">Clear form</button>
+<button (click)="close()">Close</button>
+</form>
+
+
+

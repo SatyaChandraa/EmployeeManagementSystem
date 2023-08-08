@@ -1,0 +1,30 @@
+button{
+    padding: 10px;
+    margin: 0 20px;
+    font-size: 20px;
+}
+select{
+    padding: 10px;
+    margin-left: 5px;
+   
+}
+div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(108, 122, 126);
+
+}
+#pgNum{
+    /* margin-right: 340px; */
+    border-radius: 50%;
+    background-color: rgb(132, 165, 181);
+    color: black;
+    display: inline;
+    padding: 10px 15px;
+}
+/* .mat-mdc-form-field{
+    width: 35px;
+} */
+
+

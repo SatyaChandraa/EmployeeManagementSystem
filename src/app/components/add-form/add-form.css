@@ -1,0 +1,29 @@
+/* input{
+    width: 500px;
+    height: 30px;
+    margin: 20px;   
+} */
+button{
+    margin-right: 50px;
+    padding: 10px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+  
+  /* .example-full-width {
+    /* width: 100%; */
+  
+    
+    mat-form-field {
+      margin-right: 12px;
+      width: 300px;
+      
+    }
+    
+  
+  

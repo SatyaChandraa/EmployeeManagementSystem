@@ -1,0 +1,20 @@
+<h1>LIST OF DATA</h1>
+
+<div *ngIf="showGrid">
+
+<!-- <h1>This is the table</h1> -->
+<div *ngIf="data && data.length > 0">
+    <app-mat-table id="roles-app" [empData]="data" (myevent)="delete($event)" (editEvent)="show($event.id)" 
+    (pageEvent)="pageEvent($event)"  [recordsCount]="recordsCount" 
+    (filterEvent)="filter($event)"  (editEvent)="empNav($event)"></app-mat-table>
+  </div>
+
+</div>
+
+
+
+
+    <!-- <div *ngIf="data.length > 0">
+ <app-mat-table [recordsCount]="recordsCount" [empData]="data" (myevent)="delete($event)" 
+ (editEvent)="empNav($event)" (pageEvent)="pageEvent($event)" (filterEvent)="filter($event)" (sortChanged)="sortChange($event)"></app-mat-table>
+        </div> -->

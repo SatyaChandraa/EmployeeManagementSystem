@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.active{
+    background-color: #349e64;
+    color: white;
+}
+
+#main{
+    display: flex;
+    /* justify-content: space-between; */
+    background-color: hsl(336deg 6.49% 84.9%);
+    width: 100%;
+    height: calc(100vh - 220px);
+     padding: 50px 60px;
+     overflow: auto;
+}
+
+@media (max-width:1000px){
+            #main-content p{
+                font-size: 18px;
+        }
+        #main-content h3{
+            font-size: 31px;
+        }
+        #main-content h4{
+            font-size: 26px;
+        }
+        #main-links h2{
+            font-size: 22px;
+        }
+        #main-links ul{
+            font-size: 16px;
+        }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

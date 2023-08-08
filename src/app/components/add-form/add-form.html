@@ -1,0 +1,210 @@
+
+
+<form [formGroup]="myForm" (submit)="onSubmit()" *ngIf="true">
+    <table>
+        <tr>
+            <td> <label>Name:</label></td>
+            
+            <mat-form-field appearance="fill">
+                <mat-label>Enter your name</mat-label>
+                <input matInput placeholder="Ex.Satya" formControlName="name" name="Name">
+                <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                <mat-error
+                    *ngIf=" myForm.controls['name'].touched && myForm.controls['name']?.errors?.['minlength']">Minimum 3
+                    characters required</mat-error>
+                <mat-error
+                    *ngIf=" myForm.controls['name'].touched && myForm.controls['name']?.errors?.['maxlength']">Maximum
+                    50 characters </mat-error>
+                <mat-error
+                    *ngIf=" myForm.invalid || myForm.controls['name'].touched && myForm.controls['name']?.errors?.['required']">Name
+                    is required
+                </mat-error>
+            </mat-form-field>
+        </tr>
+        <tr>
+            <td>
+                <label>Email:</label>
+            </td>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" name="Email" placeholder="Ex.satyacv18@gmail.com">
+                <mat-error *ngIf=" myForm.controls['email'].touched && myForm.controls['email']?.errors?.['email']">
+                    Please enter a valid email address </mat-error>
+                <mat-error
+                    *ngIf=" myForm.invalid || myForm.controls['email'].touched && myForm.controls['email']?.errors?.['required']">
+                    Email is <strong>required</strong> </mat-error>
+            </mat-form-field>
+
+        </tr>
+
+        <tr>
+            <td>
+                <label>Role:</label>
+            </td>
+            <td>
+                <mat-form-field>
+                    <mat-select name="role" formControlName="role" >
+                        <mat-option *ngFor="let r of roles" value="{{r.role}}"> {{r.role}} </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf=" myForm.invalid || myForm.controls['role'].touched && myForm.controls['role']?.errors?.['required']">Select Atleast one Role </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+
+       
+        
+        <tr>
+            <td>
+                <label for="contact">Contact:</label>
+            </td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <span matPrefix>+91 &nbsp;</span>
+                    <input type="tel" matInput placeholder="Enter number" formControlName="contact" >
+
+         <!-- <mat-error *ngIf=" myForm.pristine || myForm.controls['contact'].touched && myForm.controls['contact']?.errors?.['required']">Phone
+                        required</mat-error>
+     <mat-error  *ngIf=" myForm.controls['contact'].touched && myForm.controls['contact']?.errors?.['minlength']">Min
+                        10 digits required</mat-error>
+     <mat-error  *ngIf=" myForm.controls['contact'].touched && myForm.controls['contact']?.errors?.['pattern']">
+                            please enter a valid number</mat-error>
+    <mat-error  *ngIf=" myForm.controls['contact'].touched && myForm.controls['contact']?.errors?.['maxlength']">
+                               Max 10 digits allowed</mat-error>
+<mat-error *ngIf=" myForm.controls['name'].touched && myForm.controls['name']?.errors?.['maxlength']">Maximum
+                               50 characters </mat-error> -->
+
+                    <mat-error *ngIf="myForm.get('contact')!.hasError('required')">Contact is required</mat-error>
+                   <mat-error *ngIf="myForm.get('contact')!.hasError('minlength')">Number must be at least 10 digits</mat-error>
+                     <mat-error *ngIf="myForm.get('contact')!.hasError('maxlength')">Contact cannot be more than 10 characters long</mat-error>
+                     <mat-error *ngIf="myForm.get('contact')!.hasError('pattern')">Enter valid number</mat-error>
+                             
+
+
+                </mat-form-field>
+
+                <!-- <mat-form-field>
+                    <span matPrefix>+91 &nbsp;</span>
+                    <input type="number" matInput placeholder="Enter mobile number" formControlName="contact" required pattern="[1-9][0-9]{9}">
+                    <mat-error *ngIf="myForm.controls['contact'].invalid && (myForm.controls['contact'].dirty || myForm.controls['contact'].touched)">
+                      Please enter a valid 10-digit mobile number.
+                    </mat-error>
+                  </mat-form-field> -->
+                  
+            </td>
+        </tr>
+       
+
+        <tr>
+            <td>
+                <label for="DOB"> Date of Birth :</label>
+            </td>
+            <td>
+            <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker" placeholder="DD/MM/YYYY" formControlName="date" [max]="mindate" >
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="myForm.invalid">Date Of Birth is required</mat-error>
+        <!-- <mat-error *ngIf="myForm.controls['date']?.errors?.['tooYoung']">Insuffcient</mat-error> -->
+                </mat-form-field>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="gender">Gender:</label>
+            </td>
+            <td>
+                <mat-radio-group  name="options" formControlName="gender" >
+                    <mat-radio-button (change) =" radioChecked($event,'male')"  value="Male" >Male</mat-radio-button>
+                    <mat-radio-button (change) =" radioChecked($event,'female')" value="Female" >Female</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="showRadio">Gender is required</mat-error>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label for="skills">Skills</label>
+            </td>
+            <td>
+                <mat-form-field >
+
+                    <mat-select multiple formControlName="skills" [(ngModel)]="selectedSkills" >
+                        <mat-option value="Java">Java</mat-option>
+                        <mat-option value="Python">python</mat-option>
+                        <mat-option  value="C">c</mat-option>
+                        <mat-option value="React">React</mat-option>
+                        <mat-option  value="Angular">Angular</mat-option>
+                        <mat-option value="Flutter">Flutter</mat-option>
+                       
+                    </mat-select>
+ <mat-error *ngIf=" myForm.invalid || myForm.controls['skills'].touched && myForm.controls['skills']?.errors?.['required']">Select Atleast one Skill</mat-error>
+                </mat-form-field>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td> Languages</td>
+            <td>
+                    <section >
+                        <mat-checkbox formControlName="checkbox" (change) =" checked($event,'telugu' )" value="{{langs.name}}"  *ngFor="let langs of languages">{{langs.name}}</mat-checkbox>
+                    </section >   
+                <!-- </mat-form-field> -->
+            <!-- <mat-error *ngIf="myForm.controls['checkbox']?.errors?.['validCheck']">Atleast one Box should be checked</mat-error> -->
+            <!-- <mat-error *ngIf="(selectedCheck.length==0)">Atleast one Box should be checked</mat-error>  -->
+
+     <mat-error *ngIf="showChecked">Atleast one Box should be checked</mat-error>
+
+                    <!-- <div formGroupName="languages">
+                        <mat-checkbox formControlName="telugu">Telugu</mat-checkbox>
+                        <mat-checkbox formControlName="hindi">Hindi</mat-checkbox>
+                        <mat-checkbox formControlName="english">English</mat-checkbox>
+                        <mat-checkbox formControlName="tamil">Tamil</mat-checkbox>
+                        <mat-checkbox formControlName="kannada">Kannada</mat-checkbox>
+                      </div>
+             <div *ngIf="myForm.get('languages')?.errors?.['atLeastOneChecked']">At least one language must be selected.</div> -->
+
+                    
+
+                    <!-- <mat-checkbox formControlName="telugu">Telugu</mat-checkbox>
+                    <mat-checkbox formControlName="hindi">Hindi</mat-checkbox>
+                    <mat-checkbox formControlName="english">English</mat-checkbox>
+                    <mat-checkbox formControlName="tamil">Tamil</mat-checkbox>
+                    <mat-checkbox formControlName="kannada">Kannada</mat-checkbox> -->
+<!-- <mat-error *ngIf="checkboxesFormGroup.errors?.['required']">Please select at least one language</mat-error> -->
+
+
+                <!-- </div> -->
+
+                <!-- <mat-error *ngIf=" myForm.invalid || myForm.controls['checkbox'].touched && myForm.controls['checkbox']?.errors?.['required']"> Atleast 1 should be seleted</mat-error> -->
+                <!-- </mat-form-field> -->
+            </td>
+        </tr>
+
+        <tr>
+
+            <td>Summary</td>
+            <td>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Descrition</mat-label>
+                    <textarea matInput placeholder="Ex. I am Satya" formControlName="summary" name="summary"></textarea>
+                    <!-- <mat-error
+                        *ngIf=" myForm.invalid || myForm.controls['summary'].touched && myForm.controls['summary']?.errors?.['required']">Description
+                        is required</mat-error> -->
+                    <mat-error
+                        *ngIf=" myForm.controls['summary'].touched && myForm.controls['summary']?.errors?.['maxlength']">Max
+                        500 characters allowed</mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+
+    </table>
+
+    <button type="submit" *ngIf="buttonStatusU" [disabled]="myForm.invalid" >Update</button>
+    <button type="submit" *ngIf="buttonStatusA" >ADD</button>
+
+    <button routerLink="/employee-list" (click)="navigate()">Cancel& Go Back</button>
+</form>

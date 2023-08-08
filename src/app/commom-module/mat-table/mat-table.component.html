@@ -1,0 +1,79 @@
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="search something" #input>
+</mat-form-field>
+
+
+<div>
+  <table mat-table  [dataSource]="dataSource" matSort class="fixed-width-table">
+    <caption>Emplyoyee data</caption>
+    <ng-container *ngFor="let column of columns " [matColumnDef]="column.prop">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef  >{{column.name}}</th>
+        <!-- <td mat-cell *matCellDef="let row" > {{row[column.prop]}}</td> -->
+        <td mat-cell *matCellDef="let row">
+                  <ng-container [ngSwitch]="column.prop">
+                          <ng-container *ngSwitchCase="'date'">
+                            {{ row[column.prop] | date: 'dd/MM/yyyy' }}
+                          </ng-container>
+                          <ng-container *ngSwitchDefault>
+                            {{ row[column.prop] }}
+                          </ng-container>
+                  </ng-container>
+        </td>
+    </ng-container>
+   
+
+    <ng-container matColumnDef="edit">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button   (click)='editRow(row)' >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    
+    
+      <!-- Add a new column for the delete button -->
+      <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-icon-button (click)="openDeleteConfirmation(row)" >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    
+      <!-- Update the header and row definitions to include the new columns -->
+      <tr mat-header-row *matHeaderRowDef="columnNames.concat(['edit', 'delete'])"></tr>
+      <tr mat-row *matRowDef="let row; columns: columnNames.concat(['edit', 'delete'])"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+
+
+
+  </table>
+  <!-- <mat-paginator  *ngIf="dataSource.data.length>0" [length]="pageLength"   (page)="handlePageChange($event)" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" aria-label="" showFirstLastButtons></mat-paginator> -->
+
+  <app-paginator [recordsCount]="recordsCount" (valuesEmitted)="handlePageChange($event)" ></app-paginator>
+
+</div>
+
+
+
+  
+ 
+
+
+
+
+
+
+
+
+
+
+

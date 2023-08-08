@@ -1,0 +1,42 @@
+
+#main-content{
+    margin-left: 5%;
+    justify-content: left;
+    margin-top: 40px;
+}
+#main-content p{
+    font-size: 20px;
+}
+#main-content h3{
+    font-size: 35px;
+}
+#main-content h4{
+    font-size: 30px;
+}
+#main-links{
+    background-color: hsl(330deg 1.43% 72.55%);
+    width: 25%;
+     height: 650px; 
+}
+#main-links h2{
+    margin: 15px 0px;
+    font-size: 30px;
+}
+#main-links ul{
+    list-style: none;
+    font-size: 20px;
+}
+.box{
+    align-items: center;
+   text-align: center;
+    margin: 50px;
+}
+#button{
+    background-color: hsl(147.6deg 43.86% 44.71%);
+    color: white;
+    padding: 15px;
+    font-size: 15px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}

@@ -1,0 +1,337 @@
+{
+  "usersList": [
+    {
+      "name": "pranay",
+      "email": "nagarajukada123@gmail.com",
+      "role": "Tester",
+      "contact": 9394025164,
+      "gender": "Male",
+      "date": "1999-12-30",
+      "summary": "asadfasdfasdf",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English"
+      ],
+      "id": 1
+    },
+    {
+      "name": "Satya Sai Chandravadan",
+      "email": "satyacv18@gamil.com",
+      "role": "Tester",
+      "contact": 4536453645634,
+      "gender": "Male",
+      "date": "1983-12-23",
+      "summary": "fghjgfhj",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English"
+      ],
+      "id": 2
+    },
+    {
+      "name": "prudhvi",
+      "email": "ppp@kjkfjg",
+      "role": "Tester",
+      "contact": 693660519,
+      "gender": "Male",
+      "date": "2005-05-06",
+      "summary": "asdfasgh22",
+      "skills": [
+        "React",
+        "Angular",
+        "Flutter"
+      ],
+      "languages": [
+        "English",
+        "Tamil"
+      ],
+      "id": 3
+    },
+    {
+      "name": "Satya Sai Chandravadanfghbdfgh",
+      "email": "satyacv18@gamil.com",
+      "role": "Tester",
+      "contact": 4536453645634,
+      "gender": "Male",
+      "date": "1983-12-23",
+      "summary": "fghjgfhj",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "id": 5
+    },
+    {
+      "name": "pranay",
+      "email": "nagarajukada123@gmail.com",
+      "role": "Tester",
+      "contact": 9394025164,
+      "gender": "Male",
+      "date": "1999-12-30",
+      "summary": "asadfasdfasdf",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English"
+      ],
+      "id": 6
+    },
+    {
+      "name": "Satya Sai Chandravadan",
+      "email": "satyacv18@gamil.com",
+      "role": "Tester",
+      "contact": 4536453645634,
+      "gender": "Male",
+      "date": "1983-12-23",
+      "summary": "fghjgfhj",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English"
+      ],
+      "id": 7
+    },
+    {
+      "name": "prudhvi",
+      "email": "ppp@kjkfjg",
+      "role": "Tester",
+      "contact": 693660519,
+      "gender": "Male",
+      "date": "2005-05-06",
+      "summary": "asdfasgh",
+      "skills": [
+        "React",
+        "Angular",
+        "Flutter"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "id": 8
+    },
+    {
+      "name": "ssssssssssssssss",
+      "email": "asdff@fgdfg",
+      "role": "Tester",
+      "contact": "6302015536",
+      "gender": "Female",
+      "date": "2005-05-10",
+      "summary": "sgfht",
+      "skills": [
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "English",
+        "Telugu"
+      ],
+      "id": 9
+    },
+    {
+      "name": "Satya Sai Chandravadanfghbdfgh",
+      "email": "satyacv18@gamil.com",
+      "role": "Tester",
+      "contact": 4536453645634,
+      "gender": "Male",
+      "date": "1983-12-23",
+      "summary": "fghjgfhj",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "id": 10
+    },
+    {
+      "name": "pranay",
+      "email": "nagarajukada123@gmail.com",
+      "role": "Tester",
+      "contact": 9394025164,
+      "gender": "Male",
+      "date": "1999-12-30",
+      "summary": "asadfasdfasdf",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English"
+      ],
+      "id": 11
+    },
+    {
+      "name": "Satya Sai Chandravadan",
+      "email": "satyacv18@gamil.com",
+      "role": "Tester",
+      "contact": 4536453645634,
+      "gender": "Male",
+      "date": "1983-12-23",
+      "summary": "fghjgfhj",
+      "skills": [
+        "Python",
+        "React",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English"
+      ],
+      "id": 12
+    },
+    {
+      "name": "prudhvi",
+      "email": "ppp@kjkfjg",
+      "role": "Tester",
+      "contact": 693660519,
+      "gender": "Male",
+      "date": "2005-05-06",
+      "summary": "asdfasgh",
+      "skills": [
+        "React",
+        "Angular",
+        "Flutter"
+      ],
+      "languages": [
+        "English",
+        "Hindi"
+      ],
+      "id": 13
+    },
+    {
+      "name": "vamsi",
+      "email": "satya@jhdgfhj.com",
+      "role": "[object Object]",
+      "contact": "6360205113",
+      "gender": "Male",
+      "date": "2005-05-02",
+      "summary": "asdfhfg",
+      "skills": [
+        "Python",
+        "C",
+        "Angular"
+      ],
+      "languages": [
+        "Telugu",
+        "English",
+        "Tamil"
+      ],
+      "id": 14
+    },
+    {
+      "name": "srikanth",
+      "email": "satyacv18@gmail.com",
+      "role": "Developer",
+      "contact": "1111111111",
+      "gender": "Male",
+      "date": "2005-07-06",
+      "summary": "sfsdf",
+      "skills": [
+        "Python"
+      ],
+      "languages": [
+        "Hindi",
+        "Kannada",
+        "English",
+        "Telugu"
+      ],
+      "id": 15
+    }
+  ],
+  "roles": [
+    {
+      "role": "Tester role A",
+      "level": "level 1",
+      "id": 63
+    },
+    {
+      "role": "manager team",
+      "level": "level 2",
+      "id": 65
+    },
+    {
+      "role": "Developer",
+      "level": "level 2",
+      "id": 67
+    },
+    {
+      "role": "developer",
+      "level": "level 2",
+      "id": 69
+    },
+    {
+      "role": "developer",
+      "level": "level 1",
+      "id": 70
+    },
+    {
+      "role": "satya frontend developer",
+      "level": "level 3",
+      "id": 72
+    },
+    {
+      "role": "manager asdfa",
+      "level": "level 2",
+      "id": 73
+    },
+    {
+      "role": "developer",
+      "level": "level 3",
+      "id": 77
+    },
+    {
+      "role": "deepu devloper",
+      "level": "level 2",
+      "id": 78
+    },
+    {
+      "role": "developer asfasdfasdf",
+      "level": "level 2",
+      "id": 79
+    },
+    {
+      "role": "developer fyhgyhjkhjukhjk",
+      "level": "level 2",
+      "id": 80
+    },
+    {
+      "role": "Tester",
+      "level": "level 1",
+      "id": 81
+    },
+    {
+      "role": "Manager ",
+      "level": "level 3",
+      "id": 82
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+<div class="main">
+  <h1>Display of Employees List <span><button mat-icon routerLink="/employee-form" (click)="navigate()" > ADD NEW EMPLOYEE</button></span></h1>  
+           
+  <div *ngIf="data.length > 0">
+ <app-mat-table [recordsCount]="recordsCount" [empData]="data" (myevent)="delete($event)" 
+ (editEvent)="empNav($event)" (pageEvent)="pageEvent($event)" (filterEvent)="filter($event)" (sortChanged)="sortChange($event)"></app-mat-table>
+            </div>
+
+
+            <div id="spinner" *ngIf="EmployeeListService.isLoading">
+              <mat-spinner diameter="50"  ></mat-spinner>
+              <span>Loading...</span>
+          </div>{{EmployeeListService.isLoading}}
+</div>
